@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd /usr/src/exakat
-ln -s /app projects/review/code
+ln -s /github/workspace projects/review/code
 exakat project -p review
