@@ -1,0 +1,13 @@
+author: 'exakat'
+
+branding:
+    icon: 'check'
+    color: 'orange'
+
+description: 'Check your code with Exakat via GithubAction.'
+
+name: 'Exakat'
+
+runs:
+    using: 'docker'
+    image: 'docker://exakat/exakat-ga'
