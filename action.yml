@@ -4,6 +4,20 @@ branding:
     icon: 'check'
     color: 'orange'
 
+inputs:
+  ignore_dirs:
+    description: 'Dirs and files to ignore in the repository. Comma separated list of path.'
+    required: false
+    default: ''
+  include_dirs:
+    description: 'Dirs and files to include in the repository. Comma separated list of path.'
+    required: false
+    default: ''
+  ignore_rules:
+    description: 'Exakat rules to skip in this audit. Comma separated list of exakat identifiers : i.e. "Structures/AddZero,Structures/StrposCompare".'
+    required: false
+    default: ''
+
 description: 'Check your code with Exakat via GithubAction.'
 
 name: 'Exakat'
