@@ -7,6 +7,8 @@ ENV GREMLIN_VERSION 3.4.8
 ENV PATH="/usr/src/exakat/:${PATH}"
 
 COPY config/exakat.ini /usr/src/exakat/config/
+COPY exakat.phar /usr/src/exakat/exakat
+COPY projects /usr/src/exakat/projects
 
 RUN \
     echo "====> Exakat $EXAKAT_VERSION" && \
@@ -40,17 +42,17 @@ RUN \
     \
     echo "====> Exakat $EXAKAT_VERSION" && \
     cd /usr/src/exakat && \
-    curl --silent https://www.exakat.io/versions/index.php?file=exakat-$EXAKAT_VERSION.phar -o exakat.phar && \
-    chmod a+x /usr/src/exakat/exakat.* && \
-    mv exakat.phar exakat && \
+    chmod a+x /usr/src/exakat/exakat && \
     \
     echo "====> Cleanup" && \
     \
     apt-get clean && \
     rm -rf /var/cache/oracle-jdk8-installer  && \
     rm -rf /var/lib/apt/lists/* && \
-    exakat doctor && \
-    exakat init -p review
+    exakat doctor
 
 ADD entrypoint.sh /usr/src/exakat/entrypoint.sh
+
+WORKDIR /usr/src/exakat
+
 ENTRYPOINT ["entrypoint.sh"]
