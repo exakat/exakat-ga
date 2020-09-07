@@ -1,27 +1,22 @@
-author: 'exakat'
-
+author: 'Exakat SAS'
 branding:
-    icon: 'check'
+    icon: 'check-circle'
     color: 'orange'
-
 inputs:
   ignore_dirs:
-    description: 'Dirs and files to ignore in the repository. Comma separated list of path.'
+    description: 'Dirs and files to ignore in the repository. Comma separated list of path. i.e. "path/to/files,path/to/others/files".'
     required: false
     default: ''
   include_dirs:
-    description: 'Dirs and files to include in the repository. Comma separated list of path.'
+    description: 'Dirs and files to include in the repository. Comma separated list of path. i.e. "path/to/files,path/to/others/files".'
     required: false
     default: ''
   ignore_rules:
-    description: 'Exakat rules to skip in this audit. Comma separated list of exakat identifiers : i.e. "Structures/AddZero,Structures/StrposCompare".'
+    description: 'Exakat rules to skip in this audit. Comma separated list of exakat identifiers "Short Name" : i.e. "Structures/AddZero,Structures/StrposCompare".'
     required: false
     default: ''
-
-description: 'Check your code with Exakat via GithubAction.'
-
+description: 'Scan with the Exakat GitHub Action your PHP code to detect tricky issue, prevent vulnerabilities and control the quality'
 name: 'Exakat'
-
 runs:
     using: 'docker'
     image: 'docker://exakat/exakat-ga'
