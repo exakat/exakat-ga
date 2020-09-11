@@ -37,10 +37,10 @@ like this:
 
 
 ```yaml
-	  uses: docker://exakat/exakat-ga
-	  with:
-	    ignore_rules: 'Classes/StaticMethodsCalledFromObject,Php/ShouldUseCoalesce,Functions/UsesDefaultArguments'
-	    ignore_dirs: '/path/to/repos#1,/path/to/repos#2,/path/to/repos#3'
+  uses: docker://exakat/exakat-ga
+  with:
+    ignore_rules: 'Classes/StaticMethodsCalledFromObject,Php/ShouldUseCoalesce,Functions/UsesDefaultArguments'
+    ignore_dirs: '/path/to/repos#1,/path/to/repos#2,/path/to/repos#3'
 ```
 
 Use the `Short name` to declare a rule to ignore. The name of the rule is to found in the documentation at: 
