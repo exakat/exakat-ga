@@ -90,4 +90,4 @@ You can run this image locally, with the following Docker command :
 Exakat GitHub Action on Free Usage runs PHP7.4. Contact-us for more PHP version.
 
 ## Need more information ?
- Drop us a note on [Exakat HelpDesk](https://exakat.zendesk.com/hc/en-us/requests/new) and let’s make code better together.
+Drop us a note on [Exakat HelpDesk](https://exakat.zendesk.com/hc/en-us/requests/new) and let’s make code better together.
