@@ -15,6 +15,10 @@ inputs:
     description: 'Exakat rules to skip in this audit. Comma separated list of exakat identifiers "Short Name" : i.e. "Structures/AddZero,Structures/StrposCompare".'
     required: false
     default: ''
+  project_reports:
+    description: 'The format of the report for the audit. It may be Perfile (default) or Sarif.'
+    required: false
+    default: 'Perfile'
 description: 'Scan with the Exakat GitHub Action your PHP code to detect tricky issue, prevent vulnerabilities and control the quality'
 name: 'Exakat'
 runs:
