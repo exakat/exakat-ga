@@ -16,9 +16,17 @@ inputs:
     required: false
     default: ''
   project_reports:
-    description: 'The format of the report for the audit. It may be Perfile (default) or Sarif.'
+    description: 'The format of the report for the audit. It may be Perfile (default) or Sarif (for Github consumption). Multiple reports may be provided as a comma separated list : "Perfile,Sarif,Diplomat"'
     required: false
     default: 'Perfile'
+  project_rulesets:
+    description: 'Name of the rulesets to be used with the action. It may be CI-checks (default), one of Exakat default rulesets (see docs), or a custom ruleset configured with .exakat.yaml. Multiple rulesets may be provided as a comma separated list : "CI-checks,Security,MyRuleset"'
+    required: false
+    default: 'CI-checks'
+  exit_on_issue:
+    description: 'Exit(1) when one or more issues are found. Default to true. Set this to empty string, when producing report for future usage.'
+    required: false
+    default: 'true'
 description: 'Scan with the Exakat GitHub Action your PHP code to detect tricky issue, prevent vulnerabilities and control the quality'
 name: 'Exakat'
 runs:

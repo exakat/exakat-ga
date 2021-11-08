@@ -1,0 +1,6 @@
+ignore_rules:
+    - Structures/CouldUseShortAssignation
+rulesets:
+  mine:
+    - Structures/AddOne
+    - Structures/AddZero
