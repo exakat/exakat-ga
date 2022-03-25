@@ -1,4 +1,6 @@
 docker build . -t exakat/githubaction:latest 
+docker build --platform linux/amd64 . -t exakat/exakat-ga:latest 
+docker push exakat/exakat-ga:latest 
 
 
 docker run -it --rm -v `pwd`/test/:/github/workspace --entrypoint=/bin/bash exakat/githubaction:latest
