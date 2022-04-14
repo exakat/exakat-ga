@@ -82,7 +82,7 @@ https://hub.docker.com/r/exakat/exakat-ga
 
 You can run this image locally, with the following Docker command : 
 
-`docker run --rm -it -v ${PWD}:/app exakat/exakat-ga:latest`
+`docker run --rm -it -v ${PWD}:/github/workspace exakat/exakat-ga:latest`
 
 `$PWD` supposes the code to analyze is in the current folder. Adapt if needed.
 
