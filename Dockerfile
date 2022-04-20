@@ -1,7 +1,7 @@
-FROM php:8.0-cli-buster
+FROM php:8.1-cli-buster
 
 LABEL MAINTAINER Exakat, Damien Seguy, dseguy@exakat.io
-ENV EXAKAT_VERSION 2.3.8
+ENV EXAKAT_VERSION 2.4.0
 ENV GREMLIN_VERSION 3.4.13
 
 ENV PATH="/usr/src/exakat/:${PATH}"

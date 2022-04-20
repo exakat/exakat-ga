@@ -2,25 +2,24 @@
 
 Scan with the Exakat GitHub Action your PHP code to detect tricky issues, prevent vulnerabilities and control the quality.
 
-Exakat is a customizable static analyzer engine for all PHP 5.2 to PHP 8.0-dev Applications for better Quality, Security, Performance and Documentation
-
+Exakat is a customizable static analyzer engine for all PHP 5.2 to PHP 8.2-dev Applications for better Quality, Security, Performance and Documentation
 
 ## Usage
 The Exakat Github Action has to be declared in your workflow like this:
 
-_.github/workflows/test.yml_
+_.github/workflows/compatibility.php80.yml
 
 ```yaml
 on: [push, pull_request]
 name: Test
 jobs:
   exakat:
-    name: Scan with Exakat
+    name: Compabitibility PHP 8.0 with Exakat
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Exakat
-      uses: docker://exakat/exakat-ga
+      uses: docker://exakat/exakat-ga-compatibility-php-80
 ```
 
 The `on` event that triggers the workflow can be adapted following the GitHub Action Documentation.
@@ -29,23 +28,6 @@ By default an analysis is processed on all rules of the ruleset "CI-checks". The
 https://exakat.readthedocs.io/en/latest/Rulesets.html#ci-checks
 
 The Exakat Github Action scans all php files and detects automatically all common libraries and frameworks.
-
-In case you need to scope the analysis, you can use the following optional inputs : 
-- `ignore_rules`: is used to **exclude** one or multiple rules during the analysis
-- `ignore_dirs`: is used to **exclude** one or multiple directory during the analysis
-like this:
-
-
-```yaml
-  uses: docker://exakat/exakat-ga
-  with:
-    ignore_rules: 'Classes/StaticMethodsCalledFromObject,Php/ShouldUseCoalesce,Functions/UsesDefaultArguments'
-    ignore_dirs: '/path/to/repos#1,/path/to/repos#2,/path/to/repos#3'
-```
-
-Use the `Short name` to declare a rule to ignore. The name of the rule is to found in the documentation at: 
-https://exakat.readthedocs.io/en/latest/Rulesets.html#ci-checks
-Example : For rule '@ Operator', the `Short name` is 'Structures/Noscream'
 
 ## A PHP Gate in the Workflow
 The Exakat GitHub Action raises a failure in the Workflow at the first issue detected. 
@@ -91,3 +73,4 @@ Exakat GitHub Action on Free Usage runs PHP7.4. Contact-us for more PHP version.
 
 ## Need more information ?
 Drop us a note on [Exakat HelpDesk](https://exakat.zendesk.com/hc/en-us/requests/new) and let’s make code better together.
+P
